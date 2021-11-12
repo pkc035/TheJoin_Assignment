@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="boardlist">
+	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="fwdDVO" type="test.fwd.service.FwdDefaultVO"/>
+	<typeAlias  alias="fwdVO" type="test.fwd.service.FwdVO"/>
+	
+	<select id="FwdDAO.selectAll" parameterClass="fwdDVO" resultClass="egovMap">
+		
+			SELECT * FROM BOARD
+			ORDER BY BOARD_ID DESC
+			LIMIT #recordCountPerPage# OFFSET #firstIndex#			
+		
+	</select>
+	
+	<select id="FwdDAO.selectListTotCnt" parameterClass="fwdDVO" resultClass="int">
+
+			SELECT COUNT(*) totcnt
+			FROM BOARD
+		
+	</select>
+	
+	<select id="FwdDAO.selectDetailTest" parameterClass="int" resultClass="fwdVO">
+		
+			SELECT * FROM BOARD
+			WHERE BOARD_ID=#board_id#		
+		
+	</select>
+	
+	<insert id="FwdDAO.insertTest" parameterClass="fwdVO">
+
+			INSERT INTO BOARD(TITLE, CONTENTS)
+			VALUES(#title#, #contents#)
+			
+	</insert>
+	
+	<update id="FwdDAO.updateTest" parameterClass="fwdVO">
+		
+			UPDATE BOARD
+			SET TITLE=#title#, CONTENTS=#contents#
+			WHERE BOARD_ID=#board_id#		
+		
+	</update>
+	
+	<delete id="FwdDAO.deleteTest" parameterClass="int">
+		
+			DELETE FROM BOARD
+			WHERE BOARD_ID=#board_id#		
+		
+	</delete>
+	
+</sqlMap>
