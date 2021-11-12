@@ -8,12 +8,13 @@
 # 기간
  - 2021.11.01 ~ 21.11.10
 
-#기술스택
+# 기술스택
  - java
  - eGovFramework
  - Android
  - PostgreSQL
  - FireBase
 
-#구현 영상
-![TEST](https://user-images.githubusercontent.com/80021771/141415270-871ec487-5fa6-4da0-a7b7-57feab4a3317.gif)
+# 구현 영상
+
+ ![TEST](https://user-images.githubusercontent.com/80021771/141415270-871ec487-5fa6-4da0-a7b7-57feab4a3317.gif)
